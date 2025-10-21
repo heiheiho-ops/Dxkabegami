@@ -1,4 +1,4 @@
-package com.example.dxkabegami;
+package com.example.kakoyoikabegami;
 
 import android.app.Activity;
 import android.os.Bundle;

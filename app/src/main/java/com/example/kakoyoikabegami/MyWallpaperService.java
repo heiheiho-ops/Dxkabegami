@@ -1,4 +1,4 @@
-package com.example.dxkabegami;
+package com.example.kakoyoikabegami;
 
 import android.service.wallpaper.WallpaperService;
 import android.view.MotionEvent;
@@ -149,7 +149,10 @@ public class MyWallpaperService extends WallpaperService {
         }
 
         private void setupWater() {
-            // ... (setupWater code is unchanged)
+            float[] waterCoords = { -1.0f, 1.0f, 0.0f, -1.0f, -1.0f, 0.0f, 1.0f, -1.0f, 0.0f, 1.0f, 1.0f, 0.0f };
+            short[] waterDrawOrder = { 0, 1, 2, 0, 2, 3 };
+            waterVertexBuffer = createFloatBuffer(waterCoords);
+            waterDrawListBuffer = createShortBuffer(waterDrawOrder);
             waterProgram = createProgram(waterVertexShader, waterFragmentShader);
             waterPositionHandle = GLES20.glGetAttribLocation(waterProgram, "a_Position");
             waterTimeHandle = GLES20.glGetUniformLocation(waterProgram, "u_Time");
